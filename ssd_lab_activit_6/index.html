@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <title>lab activity 6</title>
+    </head>
+    <body>
+        <script>
+       document.body.addEventListener('keydown', function (e) {
+        if(e.ctrlKey && e.keyCode==77)
+     {
+
+       var element = document.body;
+       if(document.body.style.backgroundColor=="black")
+       {
+        document.body.style.backgroundColor="white";
+       // forEach(el => el.style.color = "white");
+       }
+       else
+       {
+        document.body.style.backgroundColor="black";
+       }
+      // ;
+      //alert("pressed ctrlm"+document.body.style.backgroundColor);
+
+      }
+});
+        </script>
+        <div class="formcontainer">
+            <h2>Team Form</h2>
+            <form action="#">
+                   <label> Manager Name:</label> <input type="text" id="mname" required><br>
+                   <label>Group Email:</label> <input type="email" id="gemail" required><br>
+                <label>Server Username:</label><input type="text" id="uname"  onkeyup="checkuname()"><span id="error"></span><br>
+                 <label> Server Password:</label><input type="password" id="spass" required><br>
+                <label> Confirm Password:</label><input type="password" id="cpass" onfocusout="checkpass()" required><br>
+                    <label for="tlead">Team Lead</label>
+
+<select name="tlead" id="tlead">
+  <option value="Krati">Krati</option>
+  <option value="Anuja">Anuja</option>
+  <option value="Anshita">Anshita</option>
+  <option value="Aradhna">Aradhna</option>
+</select>
+<div>
+    <h3>Team Members</h3>
+    <div class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="container">member 1</p>
+    <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="container">member 2</p>
+    <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="container">member 3</p>
+</div>
+<div class="container" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</div>
+<input type="submit" id="submit" onclick="checkandshow()">
+            </form>
+        </div>
+    </body>
+</html>
